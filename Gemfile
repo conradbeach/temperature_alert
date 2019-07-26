@@ -37,7 +37,6 @@ end
 group :development do
   gem "brakeman"
   gem "bundler-audit"
-  gem "rails-erd"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
