@@ -3,6 +3,11 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+
 Metrics/MethodLength:
   CountComments: false
   Max: 15
@@ -64,3 +69,7 @@ Style/RegexpLiteral:
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
   Enabled: true
+
+Style/ClassAndModuleChildren:
+  Description: This cop checks the style of children definitions at classes and modules.
+  Enabled: false
