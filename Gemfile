@@ -33,6 +33,7 @@ gem "clearance"
 
 group :development, :test do
   gem "pry-byebug"
+  gem "rspec-rails", "~> 3.8"
 end
 
 group :development do
@@ -54,7 +55,6 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 2.15"
-  gem "rspec"
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
