@@ -37,7 +37,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "bootstrap", "= 4.3.0"
   gem "brakeman"
   gem "bundler-audit"
   gem "rubocop", require: false
