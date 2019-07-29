@@ -83,7 +83,6 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    choice (0.2.0)
     clearance (1.17.0)
       actionmailer (>= 3.1)
       activemodel (>= 3.1)
@@ -204,10 +203,6 @@ GEM
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
     regexp_parser (1.6.0)
-    rspec (3.8.0)
-      rspec-core (~> 3.8.0)
-      rspec-expectations (~> 3.8.0)
-      rspec-mocks (~> 3.8.0)
     rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.4)
@@ -215,6 +210,14 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-mocks (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
     rubocop (0.70.0)
@@ -262,6 +265,8 @@ GEM
       rubyzip (~> 1.2, >= 1.2.2)
     sexp_processor (4.12.1)
     spring (2.1.0)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -322,7 +327,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 3.11)
   rails (~> 6.0.0.rc2)
-  rspec
+  rspec-rails (~> 3.8)
   rubocop
   rubocop-performance
   rubocop-rails
@@ -331,6 +336,7 @@ DEPENDENCIES
   sass-rails (~> 5)
   selenium-webdriver
   spring
+  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
