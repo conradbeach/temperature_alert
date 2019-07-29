@@ -6,4 +6,5 @@
 # Alert's message if one is given.
 class Alert < ApplicationRecord
   belongs_to :user
+  has_many :deliveries
 end
