@@ -30,4 +30,4 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  unrecognized_zip_code_error: "We couldn't find latitude and longitude data for the given zip code."
