@@ -32,6 +32,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 
 gem "aws-sdk-sns", "~> 1"
 gem "clearance"
+gem "rest-client", "~> 2.0"
 
 group :development, :test do
   gem "pry-byebug"
@@ -61,6 +62,7 @@ group :test do
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
+  gem "webmock", "~> 3.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
