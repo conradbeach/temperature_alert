@@ -4,4 +4,6 @@
 # only sent via SMS.
 class Delivery < ApplicationRecord
   belongs_to :alert
+
+  validates :sent_at, presence: true
 end
