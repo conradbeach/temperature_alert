@@ -7,4 +7,5 @@
 class Alert < ApplicationRecord
   belongs_to :user
   has_many :deliveries
+  validates :temperature_threshold, presence: true
 end

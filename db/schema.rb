@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_05_204512) do
+ActiveRecord::Schema.define(version: 2019_08_06_154905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "alerts", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "temperature_threshold"
+    t.integer "temperature_threshold", null: false
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
