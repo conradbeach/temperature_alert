@@ -36,7 +36,10 @@ module Weather
   end
 
   def self.api_url(lat, lng)
-    "#{BASE_API_URL}/#{Rails.application.credentials.dark_sky[:secret_key]}/#{lat},#{lng}"
+    "#{BASE_API_URL}" \
+      "/#{Rails.application.credentials.dark_sky[:secret_key]}" \
+      "/#{lat},#{lng}" \
+      "?exclude=minutely,hourly,daily,alerts"
   end
 
   private_class_method :zip_to_lat_lng, :fetch_temperature, :api_url
