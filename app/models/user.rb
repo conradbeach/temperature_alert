@@ -4,5 +4,5 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :alerts
+  has_many :alerts, dependent: :destroy
 end

@@ -6,6 +6,6 @@
 # Alert's message if one is given.
 class Alert < ApplicationRecord
   belongs_to :user
-  has_many :deliveries
+  has_many :deliveries, dependent: :destroy
   validates :temperature_threshold, presence: true
 end
