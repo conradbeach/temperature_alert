@@ -19,5 +19,7 @@ module TemperatureAlert
     # the framework and any gems in your application.
 
     config.autoload_paths += ["lib"]
+
+    config.time_zone = "Pacific Time (US & Canada)"
   end
 end

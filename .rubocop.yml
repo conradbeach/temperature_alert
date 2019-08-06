@@ -23,10 +23,16 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
   Enabled: true
 
+Metrics/BlockLength:
+  Description: 'This cop checks if the length of a block exceeds some maximum value. Comment lines can optionally be ignored. The maximum allowed length is configurable. The cop can be configured to ignore blocks passed to certain methods.'
+  Exclude: ['spec/**/*', 'config/**/*']
+  Enabled: true
+
 Metrics/LineLength:
   Description: 'Limit lines to 80 characters.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
   Max: 100
+  IgnoredPatterns: ['\A\s*#'] # Comments
   Enabled: true
 
 Style/WordArray:
@@ -75,3 +81,8 @@ Layout/AlignParameters:
 Style/ClassAndModuleChildren:
   Description: This cop checks the style of children definitions at classes and modules.
   Enabled: false
+
+RSpec/ExampleLength:
+  Description: Checks for long examples. A long example is usually more difficult to understand. Consider extracting out some behaviour, e.g. with a let block, or a helper method.
+  Max: 10
+  Enabled: true
