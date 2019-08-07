@@ -31,3 +31,4 @@
 
 en:
   unrecognized_zip_code_error: "We couldn't find latitude and longitude data for the given zip code."
+  data_temporarily_unavailable_error: "The weather service is temporarily down and weather data could not be retrieved."

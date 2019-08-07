@@ -1,0 +1,9 @@
+{
+  "latitude": 18.180555,
+  "longitude": -66.749961,
+  "timezone": "America/Puerto_Rico",
+  "flags": {
+    "darksky-unavailable": "true"
+  },
+  "offset": -4
+}

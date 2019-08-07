@@ -28,12 +28,18 @@ module Weather
 
   def self.fetch_temperature(lat, lng)
     response = RestClient.get(api_url(lat, lng))
+    json_response = JSON.parse(response)
 
-    JSON.parse(response)["currently"]["temperature"].round
+    raise DataTemporarilyUnavailable if json_response["flags"].key?("darksky-unavailable")
+
+    json_response["currently"]["temperature"].round
   end
 
   def self.api_url(lat, lng)
-    "#{BASE_API_URL}/#{Rails.application.credentials.dark_sky[:secret_key]}/#{lat},#{lng}"
+    "#{BASE_API_URL}" \
+      "/#{Rails.application.credentials.dark_sky[:secret_key]}" \
+      "/#{lat},#{lng}" \
+      "?exclude=minutely,hourly,daily,alerts"
   end
 
   private_class_method :zip_to_lat_lng, :fetch_temperature, :api_url
@@ -41,6 +47,14 @@ module Weather
   class UnrecognizedZipCode < StandardError
     def initialize(message = nil)
       message ||= I18n.t(:unrecognized_zip_code_error)
+
+      super(message)
+    end
+  end
+
+  class DataTemporarilyUnavailable < StandardError
+    def initialize(message = nil)
+      message ||= I18n.t(:data_temporarily_unavailable_error)
 
       super(message)
     end
