@@ -4,8 +4,17 @@ require "rails_helper"
 
 RSpec.describe Weather, type: :module do
   describe ".temperature_of" do
+    before do
+      WebMock.stub_request(:get, %r{https://api.darksky.net/forecast/\w+/18.180555,-66.749961})
+        .to_return(
+          status: 200,
+          body: File.read(
+            File.join("spec", "fixtures", "dark_sky_puerto_rico_response.json"),
+          ),
+        )
+    end
+
     it "returns the current temperature of the given zip code" do
-      # The underlying request is mocked in spec/support/webmock.rb
       expect(described_class.temperature_of("00601")).to eq(77)
     end
 
