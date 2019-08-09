@@ -63,3 +63,7 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 end
+
+RspecApiDocumentation.configure do |config|
+  config.format = :json
+end
