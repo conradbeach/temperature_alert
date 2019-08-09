@@ -58,6 +58,9 @@ GEM
       zeitwerk (~> 2.1, >= 2.1.8)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    apitome (0.3.0)
+      kramdown
+      railties
     ast (2.4.0)
     aws-eventstream (1.0.3)
     aws-partitions (1.194.0)
@@ -127,6 +130,7 @@ GEM
     ice_nine (0.11.2)
     jaro_winkler (1.5.2)
     jmespath (1.4.0)
+    kramdown (2.1.0)
     kwalify (0.7.2)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -308,6 +312,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  apitome (~> 0.3.0)
   aws-sdk-sns (~> 1)
   bootsnap (>= 1.4.2)
   brakeman

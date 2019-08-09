@@ -7,6 +7,7 @@ ruby "2.6.3"
 
 gem "rails", "~> 6.0.0.rc2"
 
+gem "apitome", "~> 0.3.0"
 gem "aws-sdk-sns", "~> 1"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "fast_jsonapi", "~> 1.5"
