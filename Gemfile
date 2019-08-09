@@ -7,6 +7,7 @@ ruby "2.6.3"
 
 gem "rails", "~> 6.0.0.rc2"
 
+gem "apitome", "~> 0.3.0"
 gem "aws-sdk-sns", "~> 1"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "fast_jsonapi", "~> 1.5"
@@ -18,6 +19,7 @@ group :development, :test do
   gem "factory_bot_rails", "~> 5.0"
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.8"
+  gem "rspec_api_documentation", "~> 6.0"
 end
 
 group :development do
