@@ -1,24 +1,7 @@
-# README
+# Temperature Alert
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Temperature Alert is a small API only application that sends SMS notifications to users when the temperature in their area hits the user's configured alert thresholds.
 
-Things you may want to cover:
+For example, I keep my windows open at night during the summer to let in the cool night air, and I use Temperature Alert to remind me to close the windows once it gets hot enough outside.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The back-end logic for configuring alerts and delivering notifications is complete, but the API is not.
