@@ -12,7 +12,7 @@ gem "aws-sdk-sns", "~> 1"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "fast_jsonapi", "~> 1.5"
 gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "rest-client", "~> 2.0"
 
 group :development, :test do
