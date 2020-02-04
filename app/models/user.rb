@@ -2,6 +2,8 @@
 
 # Represents an end user of the application.
 class User < ApplicationRecord
+  include Clearance::User
+
   has_many :alerts, dependent: :destroy
 
   # Conditionally delivers all alerts for all users.
