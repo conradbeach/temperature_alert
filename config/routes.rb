@@ -2,4 +2,6 @@
 
 Rails.application.routes.draw do
   root "pages#home"
+
+  get "dashboard", to: "users#show"
 end
