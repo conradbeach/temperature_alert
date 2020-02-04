@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 require "support/features/clearance_helpers"
 
-RSpec.feature "User signs out" do
-  scenario "signs out" do
+RSpec.describe "User signs out", type: :feature do
+  it "signs out" do
     sign_in
     sign_out
 

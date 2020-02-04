@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 require "support/features/clearance_helpers"
 
-RSpec.feature "Visitor resets password" do
+RSpec.describe "Visitor resets password", type: :feature do
   before { ActionMailer::Base.deliveries.clear }
 
   around do |example|
@@ -11,22 +13,22 @@ RSpec.feature "Visitor resets password" do
     ActiveJob::Base.queue_adapter = original_adapter
   end
 
-  scenario "by navigating to the page" do
+  it "by navigating to the page" do
     visit sign_in_path
 
     click_link I18n.t("sessions.form.forgot_password")
 
-    expect(current_path).to eq new_password_path
+    expect(page).to have_current_path new_password_path, ignore_query: true
   end
 
-  scenario "with valid email" do
+  it "with valid email" do
     user = user_with_reset_password
 
     expect_page_to_display_change_password_message
     expect_reset_notification_to_be_sent_to user
   end
 
-  scenario "with non-user account" do
+  it "with non-user account" do
     reset_password_for "unknown.email@example.com"
 
     expect_page_to_display_change_password_message
@@ -36,7 +38,7 @@ RSpec.feature "Visitor resets password" do
   private
 
   def expect_reset_notification_to_be_sent_to(user)
-    expect(user.confirmation_token).not_to be_blank
+    expect(user.confirmation_token).to_not be_blank
     expect_mailer_to_have_delivery(
       user.email,
       "password",
@@ -49,7 +51,7 @@ RSpec.feature "Visitor resets password" do
   end
 
   def expect_mailer_to_have_delivery(recipient, subject, body)
-    expect(ActionMailer::Base.deliveries).not_to be_empty
+    expect(ActionMailer::Base.deliveries).to_not be_empty
 
     message = ActionMailer::Base.deliveries.any? do |email|
       email.to == [recipient] &&
@@ -58,7 +60,7 @@ RSpec.feature "Visitor resets password" do
         email.text_part.body =~ /#{body}/
     end
 
-    expect(message).to be
+    expect(message).to be_truthy
   end
 
   def expect_mailer_to_have_no_deliveries
