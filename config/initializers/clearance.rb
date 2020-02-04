@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 Clearance.configure do |config|
-  config.cookie_domain = "temperature-alert.herokuapp.com"
+  # Default configuration can be found [here](https://github.com/thoughtbot/clearance#configure).
   config.mailer_sender = "help@temperature-alert.herokuapp.com"
   config.redirect_url = "/dashboard"
-  config.rotate_csrf_on_sign_in = true
   config.routes = false
-  config.secure_cookie = true
-  config.user_model = "User"
 end
