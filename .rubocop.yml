@@ -91,3 +91,13 @@ RSpec/ExampleLength:
   Description: Checks for long examples. A long example is usually more difficult to understand. Consider extracting out some behaviour, e.g. with a let block, or a helper method.
   Max: 10
   Enabled: true
+
+RSpec/MultipleExpectations:
+  Description: Checks if examples contain too many expect calls.
+  Max: 5
+  Enabled: true
+
+RSpec/NotToNot:
+  Description: Checks for consistent method usage for negating expectations.
+  EnforcedStyle: to_not
+  Enabled: true
