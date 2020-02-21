@@ -28,6 +28,11 @@ Metrics/BlockLength:
   Exclude: ['spec/**/*', 'config/**/*']
   Enabled: true
 
+Metrics/AbcSize:
+  Description: 'This cop checks that the ABC size of methods is not higher than the configured maximum. The ABC size is based on assignments, branches (method calls), and conditions. See http://c2.com/cgi/wiki?AbcMetric and https://en.wikipedia.org/wiki/ABC_Software_Metric.'
+  Enabled: true
+  Max: 20
+
 Layout/LineLength:
   Description: 'Limit lines to 80 characters.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
@@ -85,4 +90,14 @@ Style/ClassAndModuleChildren:
 RSpec/ExampleLength:
   Description: Checks for long examples. A long example is usually more difficult to understand. Consider extracting out some behaviour, e.g. with a let block, or a helper method.
   Max: 10
+  Enabled: true
+
+RSpec/MultipleExpectations:
+  Description: Checks if examples contain too many expect calls.
+  Max: 5
+  Enabled: true
+
+RSpec/NotToNot:
+  Description: Checks for consistent method usage for negating expectations.
+  EnforcedStyle: to_not
   Enabled: true

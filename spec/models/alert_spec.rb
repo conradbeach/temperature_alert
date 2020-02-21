@@ -68,7 +68,7 @@ RSpec.describe Alert, type: :model do
       it "does not deliver the alert" do
         alert.conditionally_deliver(alert.temperature_threshold - 5)
 
-        expect(sns_client_double).not_to have_received(:publish)
+        expect(sns_client_double).to_not have_received(:publish)
       end
     end
 
@@ -78,7 +78,7 @@ RSpec.describe Alert, type: :model do
 
         alert.conditionally_deliver(alert.temperature_threshold + 5)
 
-        expect(sns_client_double).not_to have_received(:publish)
+        expect(sns_client_double).to_not have_received(:publish)
       end
     end
   end
