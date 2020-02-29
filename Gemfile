@@ -13,7 +13,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "clearance", "~> 2.0"
 gem "fast_jsonapi", "~> 1.5"
 gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "rest-client", "~> 2.0"
 gem "sass-rails", "~> 5"
 gem "turbolinks", "~> 5"
