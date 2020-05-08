@@ -8,9 +8,9 @@ class User < ApplicationRecord
 
   # Conditionally delivers all alerts for all users.
   def self.deliver_alerts
-    current_temperatures = distinct.pluck(:zip_code).map do |zip_code|
-      [zip_code, Weather.temperature_of(zip_code)]
-    end.to_h
+    current_temperatures = distinct.pluck(:zip_code).index_with do |zip_code|
+      Weather.temperature_of(zip_code)
+    end
 
     find_each do |user|
       user.deliver_alerts(current_temperatures[user.zip_code])
