@@ -13,7 +13,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "clearance", "~> 2.0"
 gem "fast_jsonapi", "~> 1.5"
 gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.12"
+gem "puma", ">= 5.3.1"
 gem "rest-client", "~> 2.0"
 gem "sass-rails", "~> 5"
 gem "turbolinks", "~> 5"
@@ -22,8 +22,8 @@ gem "webpacker", "~> 4.0"
 group :development, :test do
   gem "factory_bot_rails", "~> 5.0"
   gem "pry-byebug"
-  gem "rspec-rails", "~> 3.8"
   gem "rspec_api_documentation", "~> 6.0"
+  gem "rspec-rails", "~> 3.8"
 end
 
 group :development do

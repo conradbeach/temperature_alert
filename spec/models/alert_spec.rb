@@ -3,11 +3,15 @@
 require "rails_helper"
 
 RSpec.describe Alert, type: :model do
+  include ActiveSupport::Testing::TimeHelpers
+
   let!(:sns_client_double) { instance_double(Aws::SNS::Client) }
 
   before do
     allow(Aws::SNS::Client).to receive(:new).and_return(sns_client_double)
     allow(sns_client_double).to receive(:publish)
+
+    travel_to(Time.current.change(hour: 10))
   end
 
   describe "#conditionally_deliver" do
@@ -61,6 +65,16 @@ RSpec.describe Alert, type: :model do
             phone_number: alert.user.phone_number,
             message: /#{custom_message}/,
           )
+      end
+    end
+
+    context "when the current time is before 6am" do
+      it "does not deliver the alert" do
+        travel_to(Time.current.change(hour: 5, minute: 50))
+
+        alert.conditionally_deliver(alert.temperature_threshold + 5)
+
+        expect(sns_client_double).to_not have_received(:publish)
       end
     end
 

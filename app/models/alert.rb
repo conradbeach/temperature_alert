@@ -18,6 +18,7 @@ class Alert < ApplicationRecord
   #
   # @return The newly created `Delivery` record if the alert is delivered; `nil` otherwise.
   def conditionally_deliver(current_temperature)
+    return if Time.current < Time.current.change(hour: 6)
     return if current_temperature < temperature_threshold
     return if delivered_today?
 
