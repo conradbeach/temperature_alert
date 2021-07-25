@@ -22,8 +22,8 @@ gem "webpacker", "~> 4.0"
 group :development, :test do
   gem "factory_bot_rails", "~> 5.0"
   gem "pry-byebug"
-  gem "rspec-rails", "~> 3.8"
   gem "rspec_api_documentation", "~> 6.0"
+  gem "rspec-rails", "~> 3.8"
 end
 
 group :development do
