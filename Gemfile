@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.0"
+ruby "2.7.4"
 
 gem "rails", "~> 6.0.0.rc2"
 
@@ -15,7 +15,7 @@ gem "fast_jsonapi", "~> 1.5"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
 gem "rest-client", "~> 2.0"
-gem "sass-rails", "~> 5"
+gem "sass-rails", "~> 5" # TODO: Update to sassc gem.
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
